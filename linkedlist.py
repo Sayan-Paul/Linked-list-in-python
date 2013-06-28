@@ -57,11 +57,25 @@ def insert_n(n,v):
 
 def remove_end():
     global root
-    
+    if root.x is None:
+        print "Empty list"
+    elif root.next is None:
+        root.x=None
+    else:
+        c=root
+        while not (c.next.next is None):
+            c=c.next
+        c.next=None    
     pass
 
 def remove_beg():
     global root
+    if root.x is None:
+        print "Empty list"
+    elif root.next is None:
+        root.x=None
+    else:
+        root=root.next
     pass
 
 def remove_n(n):
