@@ -80,6 +80,15 @@ def remove_beg():
 
 def remove_n(n):
     global root
+    if n==0:
+        remove_beg()
+        return
+    while not (c.next is None or n ==1):
+        c=c.next
+        n-=1
+    if n<1:
+        print "Invalid n value"
+        c.next=c.next.next
     pass
 
 def rev():
