@@ -83,16 +83,30 @@ def remove_n(n):
     if n==0:
         remove_beg()
         return
+    c=root
     while not (c.next is None or n ==1):
         c=c.next
         n-=1
     if n<1:
         print "Invalid n value"
+    else:
         c.next=c.next.next
     pass
 
 def rev():
     global root
+    if root.x is None:return
+    r=root
+    c=r.next
+    r.next=None
+    while not (c is None):
+        t=c.next
+        c.next=r
+        r=c
+        if t is None:
+            root=c
+        c=t
+    
     pass
 
 def trav():
@@ -126,8 +140,7 @@ if __name__=='__main__':
         print "9. Exit"
         print "$Linked-list\_",
         n=input()
-        if n==9:
-            break
+        if n==9:print "Exiting...";break
         elif n==0:init();print "Initialised..."
         elif n==1:trav()
         elif n==2:insert_end(input("Enter value : "));print "Inserted "
