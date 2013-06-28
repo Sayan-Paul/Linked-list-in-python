@@ -1,5 +1,6 @@
 #Linked List implementation
 
+
 class node(object):
     x=None
     next=None
@@ -40,8 +41,9 @@ def insert_beg(v):
 
 def insert_n(n,v):
     global root
-    if n==1:
+    if n==0:
         insert_beg(v)
+        return
     c=root
     while not (c.next is None or n ==1):
         c=c.next
@@ -55,6 +57,7 @@ def insert_n(n,v):
 
 def remove_end():
     global root
+    
     pass
 
 def remove_beg():
@@ -74,6 +77,7 @@ def trav():
     if root.x is None:
         print "Empty list"
     else:
+        print "The List: ",
         c=root
         while not (c is None):
             print "->",c.x,
@@ -101,14 +105,14 @@ if __name__=='__main__':
         n=input()
         if n==9:
             break
-        elif n==0:init()
+        elif n==0:init();print "Initialised..."
         elif n==1:trav()
-        elif n==2:insert_end(input("Enter value : "))
-        elif n==3:insert_beg(input("Enter value : "))
-        elif n==4:remove_beg()
-        elif n==5:remove_end()
-        elif n==6:insert_n(input("Enter n : "),input("Enter value : "))
-        elif n==7:remove_n(input("Enter n : "))
-        elif n==8:rev()
+        elif n==2:insert_end(input("Enter value : "));print "Inserted "
+        elif n==3:insert_beg(input("Enter value : "));print "Inserted "
+        elif n==4:remove_beg();print "Removed "
+        elif n==5:remove_end();print "Removed "
+        elif n==6:insert_n(input("Enter n : "),input("Enter value : "));print "Inserted "
+        elif n==7:remove_n(input("Enter n : "));print "Removed "
+        elif n==8:rev();print "Reversed "
         else:continue
-    
+        l=raw_input("(Press Enter)")
