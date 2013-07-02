@@ -2,20 +2,21 @@
 
 
 class node(object):
-    x=None
-    next=None
+    "List node structure "
     def __init__(self):
-        x=None
-        next=None
+        self.x=None
+        self.next=None
 
 root=None
 
 def init():
+    "Initialise list"
     global root
     root=node()
     pass
 
 def insert_end(v):
+    "Insert element at the end of list"
     global root
     if root.x is None:
         root.x=v
@@ -29,6 +30,7 @@ def insert_end(v):
     pass
 
 def insert_beg(v):
+    "Insert element at the root of list"
     global root
     if root.x is None:
         root.x=v
@@ -40,6 +42,7 @@ def insert_beg(v):
     pass
 
 def insert_n(n,v):
+    "Insert element after nth element of list"
     global root
     if n==0:
         insert_beg(v)
@@ -56,6 +59,7 @@ def insert_n(n,v):
     pass
 
 def remove_end():
+    "Remove element from the end of list"
     global root
     if root.x is None:
         print "Empty list"
@@ -69,6 +73,7 @@ def remove_end():
     pass
 
 def remove_beg():
+    "Remove element from the beginning of list"
     global root
     if root.x is None:
         print "Empty list"
@@ -79,6 +84,7 @@ def remove_beg():
     pass
 
 def remove_n(n):
+    "Remove element after nth element of list"
     global root
     if n==0:
         remove_beg()
@@ -94,6 +100,7 @@ def remove_n(n):
     pass
 
 def rev():
+    "Reverse the list"
     global root
     if root.x is None:return
     r=root
@@ -107,9 +114,9 @@ def rev():
             root=c
         c=t
     
-    pass
 
 def trav():
+    "Traverse the list"
     global root
     if root.x is None:
         print "Empty list"
